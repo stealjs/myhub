@@ -1,0 +1,59 @@
+{
+  "name": "myhub",
+  "version": "1.0.0",
+  "description": "StealJS progressive loading example app",
+  "main": "myhub.js",
+  "scripts": {
+    "start": "http-server -c-1",
+    "build": "steal-tools --bundle-steal",
+    "eslint": "eslint **/*.js"
+  },
+  "keywords": [],
+  "author": "Bitovi",
+  "license": "MIT",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "eslint": "^4.0.0",
+    "http-server": "^0.10.0",
+    "jquery": "^3.2.1",
+    "justifiedGallery": "^3.6.2",
+    "steal": "^1.5.2",
+    "steal-css": "^1.2.4",
+    "steal-less": "^1.2.0",
+    "steal-qunit": "^1.0.1",
+    "steal-tools": "^1.3.3"
+  },
+  "steal": {
+    "plugins": [
+      "steal-css",
+      "steal-less"
+    ],
+    "map": {
+      "justifiedGallery": "justifiedGallery/src/js/justifiedGallery"
+    },
+    "meta": {
+      "justifiedGallery/src/js/justifiedGallery": {
+        "format": "global",
+        "deps": [
+          "jquery",
+          "justifiedGallery/src/less/justifiedGallery.less"
+        ]
+      }
+    },
+    "bundle": [
+      "myhub/puppies/puppies",
+      "myhub/weather/weather"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "node": true,
+      "es6": true,
+      "browser": true
+    },
+    "parserOptions": {
+      "sourceType": "module"
+    }
+  }
+}
