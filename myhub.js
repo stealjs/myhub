@@ -1,6 +1,4 @@
 import $ from "jquery";
-import weather from "./weather/weather";
-import puppies from "./puppies/puppies";
 
 import "./myhub.less";
 import "bootstrap/dist/css/bootstrap.css";
