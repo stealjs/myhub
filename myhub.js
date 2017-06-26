@@ -11,20 +11,12 @@ $("body").append(`
     </div>
 `);
 
-var modules = {
-  weather: weather,
-  puppies: puppies,
-  "": function(selector) {
-    $(selector).html("Welcome home");
-  }
-};
-
 var updatePage = function() {
   var hash = window.location.hash.substr(1);
   if (!hash) {
     $("#main").html("Welcome home");
   } else {
-    steal.import(`myhub/${hash}/${hash}`).then(function(moduleOrPlugin) {
+    steal.import(`myhub@1.0.0#${hash}/${hash}`).then(function(moduleOrPlugin) {
       var plugin = typeof moduleOrPlugin === "function"
         ? moduleOrPlugin
         : moduleOrPlugin["default"];
