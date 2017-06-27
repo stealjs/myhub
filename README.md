@@ -1,4 +1,5 @@
-# StealJS progressive loading example app
+# StealJS progressive loading example app 
+[![Build Status](https://travis-ci.org/stealjs/myhub.svg?branch=master)](https://travis-ci.org/stealjs/myhub)
 
 Check out the guide in [StealJS](https://stealjs.com/docs/StealJS.guides.progressive_loading.html) website.
 
