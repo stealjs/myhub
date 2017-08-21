@@ -6,18 +6,19 @@ import "bootstrap/dist/css/bootstrap.css";
 $("body").append(`
     <div class="container">
         <h1>Goodbye script tags!</h1>
-        <a href="#weather">Weather</a> <a href="#puppies">Puppies</a>
+        <a href="/weather">Weather</a> <a href="/puppies">Puppies</a>
         <div id="main"/>
     </div>
 `);
 
 var updatePage = function() {
-  var hash = window.location.hash.substr(1);
-  if (!hash) {
+  var path = location.pathname;
+  if (path === "/") {
     $("#main").html("Welcome home");
   } else {
+    var page = path.substr(1);
     /* globals steal */
-    steal.import(`myhub/${hash}/${hash}`).then(function(moduleOrPlugin) {
+    steal.import(`myhub/${page}/${page}`).then(function(moduleOrPlugin) {
       var plugin = typeof moduleOrPlugin === "function"
         ? moduleOrPlugin
         : moduleOrPlugin["default"];
@@ -26,6 +27,6 @@ var updatePage = function() {
   }
 };
 
-$(window).on("hashchange", updatePage);
+$(window).on("popstate", updatePage);
 
 updatePage();
