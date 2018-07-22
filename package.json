@@ -32,14 +32,14 @@
       "steal-less"
     ],
     "map": {
-      "justifiedGallery": "justifiedGallery/src/js/justifiedGallery"
+      "justifiedGallery": "justifiedGallery/dist/js/jquery.justifiedGallery"
     },
     "meta": {
-      "justifiedGallery/src/js/justifiedGallery": {
+      "justifiedGallery/dist/js/jquery.justifiedGallery": {
         "format": "global",
         "deps": [
           "jquery",
-          "justifiedGallery/src/less/justifiedGallery.less"
+          "justifiedGallery/dist/css/justifiedGallery.css"
         ]
       }
     },
